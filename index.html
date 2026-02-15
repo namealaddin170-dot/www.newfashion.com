@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO meta tags -->
+    <meta name="description" content="Élodie Haven - Paris based fashion designer specializing in modern sculptural elegance and couture.">
+    <meta name="keywords" content="fashion designer, couture, luxury clothing, Paris fashion">
+    <title>ÉLODIE HAVEN | fashion designer</title>
+    <!-- Font Awesome 5 (free) -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f9f7f5;
+            color: #1e1e1e;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, blockquote {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+
+        /* container */
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* header / navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+            flex-wrap: wrap;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo a {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #1a1a1a;
+            letter-spacing: -0.02em;
+        }
+        .logo span {
+            font-weight: 300;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            color: #7a6a5f;
+            margin-left: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            font-size: 1rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #2c2c2c;
+            transition: color 0.2s;
+            font-size: 0.9rem;
+        }
+        .nav-links a:hover {
+            color: #b9997c;
+        }
+
+        /* hero */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4rem;
+            padding: 4rem 0 5rem 0;
+        }
+        .hero-text {
+            flex: 1 1 300px;
+        }
+        .hero-text h1 {
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            line-height: 1.1;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            color: #1e1e1e;
+        }
+        .hero-text h1 i {
+            font-style: italic;
+            font-weight: 400;
+            color: #866b56;
+        }
+        .hero-desc {
+            font-size: 1.2rem;
+            color: #4f4a46;
+            max-width: 500px;
+            margin: 1.5rem 0 2.5rem 0;
+            font-weight: 300;
+            border-left: 3px solid #c9ad93;
+            padding-left: 1.5rem;
+        }
+
+        /* MODERN BUTTON STYLES (with ::after effect) */
+        .btn {
+            background: #1e1e1e;
+            color: white;
+            border: none;
+            padding: 0.9rem 2.2rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.25s ease;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 0;
+            font-weight: 400;
+            border: 1px solid #1e1e1e;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: #ffffff33;
+            transition: 0.3s;
+            z-index: -1;
+        }
+
+        .btn:hover::after {
+            height: 100%;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #1e1e1e;
+            border: 1px solid #1e1e1e;
+            margin-left: 1rem;
+        }
+        .btn-outline:hover {
+            background: #1e1e1e;
+            color: white;
+        }
+        .btn-outline::after {
+            background: #ffffff80; /* softer overlay for dark bg on hover */
+        }
+
+        .btn:hover {
+            background: #3f332b;
+            border-color: #3f332b;
+        }
+
+        .hero-image {
+            flex: 1 1 300px;
+            background: #e8dfd7;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 20px 20px 0 #dccfc4;
+        }
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(0.2);
+            display: block;
+        }
+        .placeholder-img {
+            background: linear-gradient(145deg, #cbb9a8, #e5d6cb);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #4b3b30;
+            font-style: italic;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* featured collections */
+        .section-title {
+            font-size: 2.8rem;
+            margin: 3rem 0 2rem 0;
+            font-weight: 500;
+            text-align: center;
+        }
+        .section-title span {
+            font-size: 1rem;
+            display: block;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #9b887a;
+            margin-top: 0.3rem;
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0 5rem;
+        }
+        .card {
+            background: white;
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+        }
+        .card-img {
+            width: 100%;
+            height: 380px;
+            background: #ede4dd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* IMAGE ZOOM ON CARD HOVER */
+        .card:hover .placeholder-img {
+            transform: scale(1.1);
+        }
+
+        .card-img .placeholder-img {
+            background: #dacfc6;
+            color: #4a3f38;
+        }
+        .card-content {
+            padding: 1.5rem 1.2rem 1.8rem 1.2rem;
+            background: white;
+        }
+        .card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .card-content p {
+            color: #635b55;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .season {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a28d7c;
+            margin-top: 0.7rem;
+            display: inline-block;
+        }
+
+        /* lookbook / editorial */
+        .lookbook {
+            background-color: #ece5df;
+            padding: 4rem 0;
+            margin: 4rem 0;
+        }
+        .lookbook-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .lookbook-item {
+            flex: 1 1 240px;
+            height: 360px;
+            background: #c5b4a6;
+            box-shadow: 8px 8px 0 #1e1e1e;
+            overflow: hidden;
+        }
+        .lookbook-item.large {
+            flex: 2 1 400px;
+        }
+        .lookbook-item .placeholder-img {
+            background: #b7a392;
+            color: #2f261f;
+        }
+        /* add scale to lookbook items on hover (optional but keeps consistency) */
+        .lookbook-item:hover .placeholder-img {
+            transform: scale(1.1);
+        }
+
+        /* about / designer */
+        .about-designer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+            align-items: center;
+            margin: 6rem 0;
+        }
+        .about-img {
+            flex: 1 1 300px;
+            height: 500px;
+            background: #cbb9ae;
+            box-shadow: -15px 15px 0 #b59b89;
+            overflow: hidden;
+        }
+        .about-img:hover .placeholder-img {
+            transform: scale(1.1);
+        }
+        .about-text {
+            flex: 1 1 300px;
+        }
+        .about-text h2 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.8rem;
+        }
+        .about-text h2 small {
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            display: block;
+            color: #7f6e61;
+            margin-top: 0.5rem;
+            letter-spacing: 3px;
+        }
+        .about-text p {
+            font-size: 1.1rem;
+            color: #37322e;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        .signature {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            opacity: 0.7;
+            margin-top: 2rem;
+        }
+
+        /* contact / studio */
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            background: #ffffffd6;
+            padding: 3rem 2.5rem;
+            margin: 4rem 0 6rem;
+            border: 1px solid #e3d7cf;
+        }
+        .contact-info {
+            flex: 1 1 240px;
+        }
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        .contact-info p {
+            margin: 1.2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #3c3530;
+        }
+        .contact-info i {
+            width: 24px;
+            color: #8f7766;
+        }
+        .contact-form {
+            flex: 2 1 380px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .input-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .input-group input, .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #dbcec4;
+            background: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+        }
+        .input-group input {
+            flex: 1 1 180px;
+        }
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .contact-form button {
+            width: fit-content;
+            background: #1e1e1e;
+            border: none;
+            color: white;
+            padding: 1rem 2.8rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.2s;
+            border: 1px solid #1e1e1e;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .contact-form button::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: #ffffff33;
+            transition: 0.3s;
+            z-index: -1;
+        }
+        .contact-form button:hover::after {
+            height: 100%;
+        }
+        .contact-form button:hover {
+            background: #4e3e33;
+            border-color: #4e3e33;
+        }
+
+        /* footer */
+        footer {
+            border-top: 1px solid #ddd6cf;
+            padding: 2.5rem 0;
+            margin-top: 3rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            color: #4d443e;
+        }
+        .social a {
+            color: #1e1e1e;
+            margin-left: 1.5rem;
+            font-size: 1.3rem;
+            transition: color 0.2s;
+        }
+        .social a:hover {
+            color: #b58d72;
+        }
+
+        /* placeholder image handling (simulate actual images) */
+        .placeholder-img {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-style: italic;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #382e27;
+            font-weight: 300;
+            background-color: #d6c8bd;
+            background-blend-mode: overlay;
+        }
+        /* assign unique color/text to each placeholder for visual variety */
+        .card-img:nth-child(1) .placeholder-img { background-color: #d1bfb2; }
+        .card-img:nth-child(2) .placeholder-img { background-color: #cfbeb0; }
+        .card-img:nth-child(3) .placeholder-img { background-color: #cdbbab; }
+        .lookbook-item .placeholder-img { background-color: #bba18d; }
+        .about-img .placeholder-img { background-color: #c2aa99; }
+
+        /* responsiveness */
+        @media (max-width: 700px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav-links {
+                gap: 1.8rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- header with updated nav links pointing to sections -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">Élodie Haven <span>couture</span></a>
+        </div>
+        <div class="nav-links">
+            <a href="#collections">collections</a>
+            <a href="#lookbook">lookbook</a>
+            <a href="#about">atélier</a>
+            <a href="#contact">contact</a>
+        </div>
+    </nav>
+
+    <!-- hero section -->
+    <div class="hero">
+        <div class="hero-text">
+            <h1>sculptural <i>elegance</i><br>for the modern</h1>
+            <div class="hero-desc">
+                Paris-based designer weaving architectural silhouettes with fluid savoir-faire.
+            </div>
+            <div>
+                <a href="#" class="btn">archive 2025</a>
+                <a href="#" class="btn btn-outline">studio visit</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="placeholder-img" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iMTAwMCIgdmlld0JveD0iMCAwIDgwMCAxMDAwIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9IiNlMWQzYzkiLz48cGF0aCBkPSJNMjUwIDQwMCBMNDAwIDYwMCBMNTUwIDQwMCBMNzAwIDcwMCBMMTAwIDcwMCBaIiBmaWxsPSIjYjdhMjkyIiBvcGFjaXR5PSIwLjUiLz48dGV4dCB4PSI0MDAiIHk9IjU1MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmaWxsPSIjMjgyMjFkIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7DqWxvZGllIEhhdmVuPC90ZXh0Pjwvc3ZnPg=='); background-size: cover; background-position: top;">
+                <!-- visual representation of a draped dress -->
+            </div>
+        </div>
+    </div>
+</div> <!-- end container for nav+hero -->
+
+<!-- featured collections with ID #collections -->
+<div id="collections" class="container">
+    <h2 class="section-title">recent narratives <span>couture autumn 2025</span></h2>
+    <div class="collection-grid">
+        <div class="card">
+            <div class="card-img">
+                <div class="placeholder-img" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iODAwIiB2aWV3Qm94PSIwIDAgNjAwIDgwMCI+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSI4MDAiIGZpbGw9IiNlMmQzYzkiLz48cG9seWdvbiBwb2ludHM9IjE1MCwyMDAgNDUwLDIwMCAzMDAsNTAwIiBmaWxsPSIjY2I5YjgwIi8+PHRleHQgeD0iMzAwIiB5PSI0MDAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZmlsbD0iIzdhNjI1MCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+T1JMQU5PPC90ZXh0Pjwvc3ZnPg=='); background-size: cover;"> 
+                </div>
+            </div>
+            <div class="card-content">
+                <h3>ORLANO</h3>
+                <p>Deconstructed tailoring, raw hems & liquid silks.</p>
+                <span class="season">prêt-à-porter</span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <div class="placeholder-img" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iODAwIiB2aWV3Qm94PSIwIDAgNjAwIDgwMCI+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSI4MDAiIGZpbGw9IiNlY2RjZDAiLz48Y2lyY2xlIGN4PSIzMDAiIGN5PSIzNTAiIHI9IjcwIiBmaWxsPSIjYzNhYjhmIi8+PHRleHQgeD0iMzAwIiB5PSI1MDAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZmlsbD0iIzdhNjI1MCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QkVMTEEgUlVHR0lBVDwvdGV4dD48L3N2Zz4='); background-position: center;">
+                </div>
+            </div>
+            <div class="card-content">
+                <h3>BELLA RUGGIAD</h3>
+                <p>Asymmetric draping, cut-outs, hand‑pleated organza.</p>
+                <span class="season">capsule</span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <div class="placeholder-img" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iODAwIiB2aWV3Qm94PSIwIDAgNjAwIDgwMCI+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSI4MDAiIGZpbGw9IiNmMGVlZTgiLz48cG9seWxpbmUgcG9pbnRzPSIxNTAsMjUwIDQ1MCwzMDAgMzAwLDU1MCAxMjAsNDAwIiBzdHJva2U9IiM5YjdlNjgiIHN0cm9rZS13aWR0aD0iMTUiIGZpbGw9Im5vbmUiLz48dGV4dCB4PSIzMDAiIHk9IjUwMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjIwIiBmaWxsPSIjN2E2MjUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5TRUNSRVQgU0lMRU5DRTwvdGV4dD48L3N2Zz4=');">
+                </div>
+            </div>
+            <div class="card-content">
+                <h3>SECRET SILENCE</h3>
+                <p>Evening wear with sculptural trains & liquid metal finishes.</p>
+                <span class="season">haute couture</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- lookbook editorial with ID #lookbook -->
+<div id="lookbook" class="lookbook">
+    <div class="container">
+        <h2 class="section-title" style="margin-top:0;">lookbook · 2025</h2>
+        <div class="lookbook-grid">
+            <div class="lookbook-item large">
+                <div class="placeholder-img" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNzAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjcwMCIgZmlsbD0iI2QwYjliMCIvPjxjaXJjbGUgY3g9IjQ1MCIgY3k9IjM1MCIgcj0iMTUwIiBmaWxsPSIjYzU5YzgyIi8+PHRleHQgeD0iNDUwIiB5PSIzNzAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIzMCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+U1BVUiBMRUFWRTwvdGV4dD48L3N2Zz4='); background-position: center;">
+                </div>
+            </div>
+            <div class="lookbook-item">
+                <div class="placeholder-img" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNzAwIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjcwMCIgZmlsbD0iI2UwYzliNCIvPjxsaW5lIHgxPSIxMDAiIHkxPSIxNTAiIHgyPSI1MDAiIHkyPSI1NTAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSI2Ii8+PHRleHQgeD0iMzAwIiB5PSI0MDAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iI2ZmZiI+Q1JJU1BBPC90ZXh0Pjwvc3ZnPg==');">
+                </div>
+            </div>
+            <div class="lookbook-item">
+                <div class="placeholder-img" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNzAwIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjcwMCIgZmlsbD0iI2U4YzZhMSIvPjxwb2x5Z29uIHBvaW50cz0iMjAwLDMwMCA0MDAsMzAwIDUwMCw1MDAgMTAwLDUwMCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC4zIi8+PHRleHQgeD0iMzAwIiB5PSI0NTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZmlsbD0iIzdhNjI1MCI+U0lMVkVSPC90ZXh0Pjwvc3ZnPg==');">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- about section + studio (with ID #about) -->
+<div id="about" class="container">
+    <div class="about-designer">
+        <div class="about-img">
+            <div class="placeholder-img" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNzAwIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjcwMCIgZmlsbD0iI2IyOTg4NCIvPjxwYXRoIGQ9Ik0yMjAgMjUwIEMyMjAgMjUwIDM4MCAyMDAgNDUwIDI4MCBDNTAwIDM0MCA0MjAgNDUwIDMwMCA0ODAgQzE5MCA1MTAgMTUwIDQwMCAxODAgMzIwIEMyMDAgMjYwIDIyMCAyNTAgMjIwIDI1MFoiIGZpbGw9IiM3YzVlNDkiLz48dGV4dCB4PSIzMDAiIHk9IjUwMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI4IiBmaWxsPSIjZmZmIj7DqWxvZGllPC90ZXh0Pjwvc3ZnPg=='); background-position: center;">
+            </div>
+        </div>
+        <div class="about-text">
+            <h2>Élodie Haven <small>fondatrice & directrice</small></h2>
+            <p>After a decade at Maison Margiela and Balenciaga, Élodie opened her own atelier in Le Marais. Her work explores the tension between structure and fluidity — each piece is constructed around the movement of the body, using heritage textiles and unexpected draping.</p>
+            <p><i>“I design for those who see clothing as armor and poetry at once.”</i></p>
+            <div class="signature">— e.h.</div>
+        </div>
+    </div>
+
+    <!-- contact / atelier with ID #contact -->
+    <div id="contact" class="contact-row">
+        <div class="contact-info">
+            <h3>Atelier Paris</h3>
+            <p><i class="fas fa-map-pin"></i> 12 Rue des Blancs Manteaux, 75004 Paris</p>
+            <p><i class="fas fa-phone-alt"></i> +33 1 42 78 31 05</p>
+            <p><i class="far fa-envelope"></i> studio@elodiehaven.fr</p>
+            <p><i class="far fa-clock"></i> Tue–Fri 10:00–18:00 · by appointment</p>
+        </div>
+        <div class="contact-form">
+            <h3 style="font-family: 'Playfair Display'; margin-bottom: 0.2rem; font-weight:500;">request appointment</h3>
+            <p style="margin-bottom:1rem; color:#5f554e;">for press, private viewings or collaborations.</p>
+            <div class="input-group">
+                <input type="text" placeholder="first name">
+                <input type="text" placeholder="last name">
+            </div>
+            <input type="email" placeholder="email address">
+            <textarea placeholder="tell me about your project..."></textarea>
+            <button type="submit">send inquiry</button>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+<div class="container">
+    <footer>
+        <div>© Élodie Haven — 2025 · all rights reserved</div>
+        <div class="social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+</div>
+
+<!-- Scroll animation script: elements fade up when they appear -->
+<script>
+    // স্ক্রল করলে এলিমেন্টগুলো নিচ থেকে ফুটে উঠবে
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+            }
+        });
+    }, observerOptions);
+
+    // যে সেকশনগুলো অ্যানিমেট হবে
+    document.querySelectorAll('.card, .about-designer, .contact-row').forEach(el => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(30px)";
+        el.style.transition = "all 0.8s ease-out";
+        observer.observe(el);
+    });
+</script>
+
+<!-- subtle note: images are embedded as svg patterns, but in real use replace with actual jpg/webp -->
+</body>
+  </html>
